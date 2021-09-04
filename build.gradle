@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version '0.8.17'
+    id 'maven-publish'
+}
+
+group "${libArtifactGroup}"
+version "${libArtifactVersion}"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation 'io.grpc:grpc-netty-shaded:1.40.1'
+    implementation 'io.grpc:grpc-protobuf:1.40.1'
+    implementation 'io.grpc:grpc-stub:1.40.1'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.17.3"
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.40.1'
+        }
+    }
+    generateProtoTasks.generatedFilesBaseDir='gen'
+
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+sourceSets {
+    main{
+        proto {
+            srcDir 'proto'
+        }
+    }
+}
+
+clean.doFirst {
+    file('gen').deleteDir()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId = "${libArtifactId}"
+        }
+    }
+
+}
+
+publishToMavenLocal.dependsOn build

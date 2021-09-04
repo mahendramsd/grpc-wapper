@@ -1,0 +1,84 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.msd.grpc",
+    "module": "grpc-wapper",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8",
+      "buildId": "wsaomx3fp5hfjmmrqoi3folm74"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "grpc-wapper-0.0.1.jar",
+          "url": "grpc-wapper-0.0.1.jar",
+          "size": 41318,
+          "sha512": "1913b94465237742221a3fad16603dc3a6a51559b828ce054fe7652d1bf67c6c11132e7b85b1215997d32cbdd9fae1a729856ea5ada650257cee6c38d18e16c0",
+          "sha256": "bba8b0a68f3e42cc1dba59d0ebc81a047e0fdb15b16101ddd413d9b16b4fe395",
+          "sha1": "2f24e64ec45df2f505fd7f13efec92aa7c0816c6",
+          "md5": "3a82a32072aa262b1e2d94cc4fb31c10"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.grpc",
+          "module": "grpc-netty-shaded",
+          "version": {
+            "requires": "1.40.1"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-protobuf",
+          "version": {
+            "requires": "1.40.1"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-stub",
+          "version": {
+            "requires": "1.40.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "grpc-wapper-0.0.1.jar",
+          "url": "grpc-wapper-0.0.1.jar",
+          "size": 41318,
+          "sha512": "1913b94465237742221a3fad16603dc3a6a51559b828ce054fe7652d1bf67c6c11132e7b85b1215997d32cbdd9fae1a729856ea5ada650257cee6c38d18e16c0",
+          "sha256": "bba8b0a68f3e42cc1dba59d0ebc81a047e0fdb15b16101ddd413d9b16b4fe395",
+          "sha1": "2f24e64ec45df2f505fd7f13efec92aa7c0816c6",
+          "md5": "3a82a32072aa262b1e2d94cc4fb31c10"
+        }
+      ]
+    }
+  ]
+}
